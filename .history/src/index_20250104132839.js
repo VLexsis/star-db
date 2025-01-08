@@ -1,0 +1,4 @@
+fetch('https://swapi.py4e.com/api/people/1/')
+.then(() =>  {
+    console.log('Got Response')
+})
