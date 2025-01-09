@@ -13,12 +13,10 @@ export default class RandomPlanet extends Component {
         loading: false,
         error: false
      }
-сomponentDidMount() {
 
-}
     constructor() {
-       
-
+        super()
+        this.updatePlanet()
         
     }
 
@@ -98,8 +96,7 @@ loading: false
 })
          }
      
-      updatePlanet = () => {
-        
+      updatePlanet() {
              const id = Math.floor(Math.random() * 25) + 2;
              this.swapiService
              .getPlanet(id)
@@ -137,7 +134,7 @@ const PlanetView = ({planet}) => {
 
       // Проверяем, что planet не пустой объект или undefined
   if (!planet || Object.keys(planet).length === 0) {
-    return null;
+    return null; // или можно вернуть заглушку, например <span>Loading...</span>
   }
     const { id, name, population, 
         rotationPeriod, diameter

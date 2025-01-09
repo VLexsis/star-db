@@ -13,12 +13,11 @@ export default class RandomPlanet extends Component {
         loading: false,
         error: false
      }
-сomponentDidMount() {
 
-}
     constructor() {
-       
-
+        super()
+        this.updatePlanet()
+        
         
     }
 
@@ -99,7 +98,8 @@ loading: false
          }
      
       updatePlanet = () => {
-        
+        this.setState({ loading: true });
+
              const id = Math.floor(Math.random() * 25) + 2;
              this.swapiService
              .getPlanet(id)
